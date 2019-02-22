@@ -1,13 +1,15 @@
+def img
 pipeline {
 	agent any         
 		stages {       
-			def img  = ''       
+			  
 			stage('Prepare') {                         
 				steps {  
 					sh 'npm install'                               
 					echo 'Preparing...'
 				}                 
-			}                 
+			}        
+
 			stage('Build') {      
 
 
@@ -30,8 +32,10 @@ pipeline {
 				steps {               
 					echo 'Testing...'
 					sh '''npm test'''
-					img.inside {
-						sh '''npm test'''
+					script {
+						img.inside {
+							sh '''npm test'''
+						}
 					}
 
 				}                 
