@@ -2,7 +2,8 @@ pipeline {
 	agent any         
 		stages {                 
 			stage('Prepare') {                         
-				steps {                                 
+				steps {  
+					sh 'npm install'                               
 					echo 'Preparing...'
 				}                 
 			}                 
