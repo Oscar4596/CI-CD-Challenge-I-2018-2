@@ -1,6 +1,7 @@
 pipeline {
 	agent any         
-		stages {                 
+		stages {       
+			def img          
 			stage('Prepare') {                         
 				steps {  
 					sh 'npm install'                               
@@ -19,7 +20,7 @@ pipeline {
 
 					script {
 						echo 'Building image...'
-					    def img = docker.build "appi:${env.Build_ID}"
+					   	img = docker.build "appi:${env.Build_ID}"
 						echo 'Image built...'
 					}
 
