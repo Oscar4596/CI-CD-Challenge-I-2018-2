@@ -3,7 +3,7 @@ pipeline {
 		stages {                 
 			stage('Prepare') {                         
 				steps {                                 
-					echo 'Preparing..'
+					git branch: 'Dev', url: 'https://github.com/Oscar4596/CI-CD-Challenge-I-2018-2.git'
 				}                 
 			}                 
 			stage('Build') {                         
