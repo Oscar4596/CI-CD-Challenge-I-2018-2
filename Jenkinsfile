@@ -3,12 +3,13 @@ pipeline {
 		stages {                 
 			stage('Prepare') {                         
 				steps {                                 
-					git branch: 'Dev', url: 'https://github.com/Oscar4596/CI-CD-Challenge-I-2018-2.git'
+					echo 'Preparing...'
 				}                 
 			}                 
 			stage('Build') {                         
 				steps {                                 
-					echo 'Building..'                         
+					//docker.build()
+					echo env.BUILD_ID
 				}                 
 			}                 
 			stage('Test') {                         
