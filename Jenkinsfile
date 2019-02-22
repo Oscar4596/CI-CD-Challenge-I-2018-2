@@ -1,7 +1,7 @@
 def img
 pipeline {
 	environment {
-		redcred = 'dockerhub'
+		redcred = 'dockerhubcred'
 	}
 	agent any         
 		stages {       
@@ -47,7 +47,7 @@ pipeline {
 				steps {
 					echo 'pushing'
 					script {
-						docker.withRegistry('', redcred) {
+						docker.withRegistry('', redcredx) {
 							dockerImage.push()
 						}
 					}
