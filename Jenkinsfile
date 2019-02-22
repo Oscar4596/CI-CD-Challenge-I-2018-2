@@ -11,7 +11,9 @@ pipeline {
 
 				steps {                                 
 				echo 'Deleting previous images...'
-				sh '''docker rmi -f $(docker images -q --no-trunc)'''
+				sh '''
+				if [ "$(docker images -q)" != "" ]; then docker rmi -f $(docker images -q --no-trunc); fi
+				'''
 				echo 'Previous images deleted.'		
 
 					script {
