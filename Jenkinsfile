@@ -29,6 +29,10 @@ pipeline {
 				steps {               
 					echo 'Testing...'
 					sh '''npm test'''
+					img.inside {
+						sh '''npm test'''
+					}
+
 				}                 
 			}
 			stage('push') {
