@@ -1,7 +1,7 @@
 pipeline {
 	agent any         
 		stages {       
-			def img          
+			def img  = ''       
 			stage('Prepare') {                         
 				steps {  
 					sh 'npm install'                               
