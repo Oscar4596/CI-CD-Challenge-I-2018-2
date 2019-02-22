@@ -2,6 +2,7 @@ def img
 pipeline {
 	environment {
 		redcred = 'dockerhubcred'
+
 	}
 	agent any         
 		stages {       
@@ -47,7 +48,7 @@ pipeline {
 				steps {
 					echo 'pushing'
 					script {
-						docker.withRegistry('', redcredx) {
+						docker.withRegistry('oscarjazzloor/cichallengerepo', redcredx) {
 							dockerImage.push()
 						}
 					}
