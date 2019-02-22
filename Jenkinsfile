@@ -6,10 +6,20 @@ pipeline {
 					echo 'Preparing...'
 				}                 
 			}                 
-			stage('Build') {                         
+			stage('Build') {      
+
+
 				steps {                                 
-					docker.build("appsita:$(env.BUILD_ID)")
-					//echo env.BUILD_ID
+				echo 'Deleting previous images...'
+				sh '''docker rmi -f $(docker images -q --no-trunc)'''
+				echo 'Previous images deleted.'		
+
+					script {
+						echo 'Building image...'
+					    docker.build "appi:${env.Build_ID}"
+						echo 'Image built...'
+					}
+
 				}                 
 			}                 
 			stage('Test') {                         
