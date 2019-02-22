@@ -8,8 +8,8 @@ pipeline {
 			}                 
 			stage('Build') {                         
 				steps {                                 
-					//docker.build()
-					echo env.BUILD_ID
+					docker.build("appsita:$(env.BUILD_ID)")
+					//echo env.BUILD_ID
 				}                 
 			}                 
 			stage('Test') {                         
