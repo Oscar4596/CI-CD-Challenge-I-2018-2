@@ -18,15 +18,16 @@ pipeline {
 
 					script {
 						echo 'Building image...'
-					    docker.build "appi:${env.Build_ID}"
+					    def img = docker.build "appi:${env.Build_ID}"
 						echo 'Image built...'
 					}
 
 				}                 
 			}                 
 			stage('Test') {                         
-				steps {                                 
-					echo 'Testing...'                        
+				steps {               
+					echo 'Testing...'
+					sh '''npm test'''
 				}                 
 			}
 			stage('push') {
