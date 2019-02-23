@@ -57,7 +57,7 @@ pipeline {
 				steps {                 
 					input('Deploy?')
 					echo 'Deploying....'
-					sh 'docker run -d -p 8000:8000 $(env.BUILD_ID)'
+					sh 'docker run -d -p 8000:8000 ${env.BUILD_ID}'
 				}                 
 			}         
 		} 
