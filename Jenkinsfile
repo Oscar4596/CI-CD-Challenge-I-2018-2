@@ -35,7 +35,6 @@ pipeline {
 			stage('Test') {                         
 				steps {               
 					echo 'Testing...'
-					sh '''npm test'''
 					script {
 						img.inside {
 							sh '''npm test'''
@@ -49,7 +48,7 @@ pipeline {
 					echo 'pushing'
 					script {
 						docker.withRegistry('', redcred) {
-							dockerImage.push()
+							img.push()
 						}
 					}
 				}
