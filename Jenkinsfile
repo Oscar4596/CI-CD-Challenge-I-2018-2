@@ -48,7 +48,7 @@ pipeline {
 				steps {
 					echo 'pushing'
 					script {
-						docker.withRegistry('oscarjazzloor/cichallengerepo', redcred) {
+						docker.withRegistry('', redcred) {
 							dockerImage.push()
 						}
 					}

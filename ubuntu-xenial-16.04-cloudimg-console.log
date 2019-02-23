@@ -645,4 +645,37 @@ Starting LXD - unix socket.[    5.290329] cloud-init[949]: ci-info: |   3   |   
 
 Ubuntu 16.04.5 LTS ubuntu-xenial ttyS0
 
-ubuntu-xenial login: 
+ubuntu-xenial login: [12669.779630] e1000 0000:00:03.0 enp0s3: Detected Tx Unit Hang
+[12669.779630]   Tx Queue             <0>
+[12669.779630]   TDH                  <a7>
+[12669.779630]   TDT                  <aa>
+[12669.779630]   next_to_use          <aa>
+[12669.779630]   next_to_clean        <a7>
+[12669.779630] buffer_info[next_to_clean]
+[12669.779630]   time_stamp           <1002f2e7b>
+[12669.779630]   next_to_watch        <a9>
+[12669.779630]   jiffies              <1002f2fdd>
+[12669.779630]   next_to_watch.status <0>
+[12671.782258] e1000 0000:00:03.0 enp0s3: Detected Tx Unit Hang
+[12671.782258]   Tx Queue             <0>
+[12671.782258]   TDH                  <a7>
+[12671.782258]   TDT                  <aa>
+[12671.782258]   next_to_use          <aa>
+[12671.782258]   next_to_clean        <a7>
+[12671.782258] buffer_info[next_to_clean]
+[12671.782258]   time_stamp           <1002f2e7b>
+[12671.782258]   next_to_watch        <a9>
+[12671.782258]   jiffies              <1002f31d2>
+[12671.782258]   next_to_watch.status <0>
+[12673.792398] e1000 0000:00:03.0 enp0s3: Detected Tx Unit Hang
+[12673.792398]   Tx Queue             <0>
+[12673.792398]   TDH                  <a7>
+[12673.792398]   TDT                  <aa>
+[12673.792398]   next_to_use          <aa>
+[12673.792398]   next_to_clean        <a7>
+[12673.792398] buffer_info[next_to_clean]
+[12673.792398]   time_stamp           <1002f2e7b>
+[12673.792398]   next_to_watch        <a9>
+[12673.792398]   jiffies              <1002f33c9>
+[12673.792398]   next_to_watch.status <0>
+[12674.831149] e1000 0000:00:03.0 enp0s3: Reset adapter
