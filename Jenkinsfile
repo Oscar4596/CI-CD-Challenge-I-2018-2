@@ -2,6 +2,7 @@ def img
 pipeline {
 	environment {
 		redcred = 'dockerhubcred'
+		reg = 'oscarjazzloor/cichallengerepo'
 
 	}
 	agent any         
@@ -26,7 +27,7 @@ pipeline {
 
 					script {
 						echo 'Building image...'
-					   	img = docker.build "appi:${env.Build_ID}"
+					   	img = docker.build reg+":${env.Build_ID}"
 						echo 'Image built...'
 					}
 
