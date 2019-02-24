@@ -9,9 +9,14 @@ pipeline {
 		stages {       
 			  
 			stage('Prepare') {                         
-				steps {  
-					sh 'npm install'                               
+				steps { 
+					echo 'Installing NodeJS'
+					sh 'curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -'
+					sh 'sudo apt-get install -y nodejs'
+					echo 'NodeJS installed'
 					echo 'Preparing...'
+					sh 'npm install'                               
+					
 				}                 
 			}        
 
@@ -54,10 +59,12 @@ pipeline {
 				}
 			}                 
 			stage('Deploy') {                         
-				steps {                 
+				steps {             
+					script {    
 					input('Deploy?')
 					echo 'Deploying....'
-					sh 'docker run -d -p 8000:8000 ${env.BUILD_ID}'
+					sh "docker run -d -p 8000:8000 ${env.BUILD_ID}"
+					}
 				}                 
 			}         
 		} 
