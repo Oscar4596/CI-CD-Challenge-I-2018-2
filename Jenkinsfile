@@ -26,6 +26,7 @@ pipeline {
 				steps {                                 
 				echo 'Deleting previous images...'
 				sh '''
+				if [ "$(docker ps -lq)" != "" ]; then docker rm -f $(docker ps -lq); fi
 				if [ "$(docker images -q)" != "" ]; then docker rmi -f $(docker images -q --no-trunc); fi'''
 				echo 'Previous images deleted.'		
 
