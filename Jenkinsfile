@@ -2,7 +2,7 @@ def img
 pipeline {
 	environment {
 		redcred = 'dockerhubcred'
-		reg = 'oscarjazzloor/cichallengerepo'
+		reg = 'chrepo'
 
 	}
 	agent any         
@@ -10,12 +10,8 @@ pipeline {
 			  
 			stage('Prepare') {                         
 				steps { 
-					/*echo 'Installing NodeJS'
-					sh 'curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -'
-					sh 'sudo apt-get install -y nodejs'
-					echo 'NodeJS installed'*/
 					echo 'Preparing...'
-					sh 'npm install'                               
+					//sh 'npm install'                               
 					
 				}                 
 			}        
