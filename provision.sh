@@ -32,3 +32,11 @@ sudo ln -s /etc/nginx/sites-available/jenkins /etc/nginx/sites-enabled/
 sudo service nginx restart
 sudo service jenkins restart
 echo "Success"
+
+########################
+# nodejs
+########################
+echo "Installing NodeJS"
+curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
+sudo apt-get install -y nodejs
+echo 'NodeJS installed'
