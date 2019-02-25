@@ -63,7 +63,12 @@ pipeline {
 					script {    
 					input('Deploy?')
 					echo 'Deploying....'
-					sh "docker run -d -p 8000:8000 ${env.BUILD_ID}"
+					echo 'Deleting previous containers...' 
+					sh 'if [ "$(docker ps -lq)" != "" ]; then docker rm -f $(docker ps -lq); fi'
+					echo 'Deleting done.'
+					echo 'Running new container...'
+					sh "docker run -d -p 8000:8000 "+reg+":${env.BUILD_ID}"
+					echo 'Done'
 					}
 				}                 
 			}         
