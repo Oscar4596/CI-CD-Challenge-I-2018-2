@@ -10,10 +10,10 @@ pipeline {
 			  
 			stage('Prepare') {                         
 				steps { 
-					echo 'Installing NodeJS'
+					/*echo 'Installing NodeJS'
 					sh 'curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -'
 					sh 'sudo apt-get install -y nodejs'
-					echo 'NodeJS installed'
+					echo 'NodeJS installed'*/
 					echo 'Preparing...'
 					sh 'npm install'                               
 					
