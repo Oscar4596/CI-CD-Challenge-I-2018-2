@@ -2,7 +2,7 @@ def img
 pipeline {
 	environment {
 		redcred = 'dockerhubcred'
-		reg = credentials('chrepo')
+		reg = 'oscarjazzloor/cichallengerepo'
 
 	}
 	agent any         
