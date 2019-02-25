@@ -21,9 +21,8 @@ pipeline {
 
 				steps {                                 
 				echo 'Deleting previous images...'
-				sh '''
-				if [ "$(docker ps -lq)" != "" ]; then docker rm -f $(docker ps -lq); fi
-				if [ "$(docker images oscarjazzloor/cichallengerepo -q)" != "" ]; then docker rmi -f $(docker images oscarjazzloor/cichallengerepo -q --no-trunc); fi'''
+				sh 'if [ "$(docker ps -lq)" != "" ]; then docker rm -f $(docker ps -lq); fi'
+				sh 'if [ "$(docker images '+reg' -q)" != "" ]; then docker rmi -f $(docker images '+ reg+' -q --no-trunc); fi'
 				echo 'Previous images deleted.'		
 
 					script {
